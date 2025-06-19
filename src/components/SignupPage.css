@@ -1,0 +1,686 @@
+.signup-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-card {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  color: #10b981;
+  margin-bottom: 20px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-card h2 {
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.success-card p {
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signup-header h1 {
+  color: #1f2937;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.signup-header p {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Submit Error Display */
+.submit-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #dc2626;
+}
+
+/* Google Sign-in Section */
+.google-signin-section {
+  margin-bottom: 24px;
+}
+
+.btn-google {
+  width: 100%;
+  background: #ffffff;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-google:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-google:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-google:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.google-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #4285f4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0 16px;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: #9ca3af;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1f2937;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-wrapper input:focus + .input-icon {
+  color: #667eea;
+}
+
+.input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.input-error + .input-icon {
+  color: #ef4444 !important;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.strength-label {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.error-message::before {
+  content: "⚠";
+  font-size: 14px;
+}
+
+.checkbox-group {
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  position: relative;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox-input:checked ~ .checkmark {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.checkbox-input:checked ~ .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-input:focus ~ .checkmark {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn.loading {
+  color: transparent;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.signup-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.signup-footer p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .signup-container {
+    padding: 0 20px;
+  }
+  
+  .signup-card {
+    padding: 30px 24px;
+    border-radius: 16px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .signup-header h1 {
+    font-size: 28px;
+  }
+  
+  .input-wrapper input {
+    padding: 14px 14px 14px 44px;
+    font-size: 16px;
+  }
+  
+  .input-icon {
+    left: 14px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .password-toggle {
+    right: 14px;
+  }
+  
+  .password-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .btn {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  
+  .google-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .google-loading-spinner {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .submit-error {
+    padding: 14px;
+    font-size: 13px;
+  }
+  
+  .error-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 24px 20px;
+  }
+  
+  .signup-header {
+    margin-bottom: 32px;
+  }
+  
+  .signup-header h1 {
+    font-size: 24px;
+  }
+  
+  .signup-form {
+    gap: 20px;
+  }
+  
+  .form-group {
+    gap: 6px;
+  }
+  
+  .input-wrapper input {
+    padding: 12px 12px 12px 40px;
+  }
+  
+  .input-icon {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .password-toggle {
+    right: 12px;
+  }
+  
+  .password-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .google-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .google-loading-spinner {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .submit-error {
+    padding: 12px;
+    font-size: 12px;
+  }
+  
+  .error-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .signup-card {
+    background: rgba(17, 24, 39, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .signup-header h1,
+  .success-card h2 {
+    color: #f9fafb;
+  }
+  
+  .signup-header p,
+  .success-card p {
+    color: #d1d5db;
+  }
+  
+  .form-group label {
+    color: #e5e7eb;
+  }
+  
+  .input-wrapper input {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .input-wrapper input:focus {
+    border-color: #667eea;
+    background: rgba(31, 41, 55, 0.9);
+  }
+  
+  .input-wrapper input::placeholder {
+    color: #6b7280;
+  }
+  
+  .checkbox-label {
+    color: #e5e7eb;
+  }
+  
+  .checkmark {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: #4b5563;
+  }
+  
+  .signup-footer p {
+    color: #d1d5db;
+  }
+  
+  .strength-bar {
+    background: #374151;
+  }
+  
+  .btn-google {
+    background: rgba(31, 41, 55, 0.8);
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+  
+  .btn-google:hover:not(:disabled) {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: #6b7280;
+  }
+  
+  .divider::before {
+    background: #374151;
+  }
+  
+  .divider span {
+    background: rgba(17, 24, 39, 0.95);
+    color: #9ca3af;
+  }
+  
+  .submit-error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+  }
+  
+  .error-icon {
+    color: #fca5a5;
+  }
+} 
